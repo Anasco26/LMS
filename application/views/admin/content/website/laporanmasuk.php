@@ -52,7 +52,7 @@
         type: 'column'
     },
     title: {
-        text: 'Incoming Goods Report'
+        text: 'Incoming Stocks Report'
     },
     subtitle: {
         text: 'Incoming Item Stats'
@@ -74,7 +74,7 @@
     yAxis: {
         min: 0,
         title: {
-            text: 'Number of Incoming Goods (pcs)'
+            text: 'Number of Incoming Stocks (pcs)'
         }
     },
     tooltip: {
@@ -106,7 +106,7 @@
 </script>
 
                     </div>
-						<a href="<?php echo base_url();?>website/laporanmasukpdf" class="btn btn-success btn-block btn-lg" style="margin-top: 30px !important;" target="_blank">Download Incoming Goods Report PDF</a>
+						<a href="<?php echo base_url();?>website/laporanmasukpdf" class="btn btn-success btn-block btn-lg" style="margin-top: 30px !important;" target="_blank">Download Incoming Stocks Report PDF</a>
                 </div>
             </div>
         </div>

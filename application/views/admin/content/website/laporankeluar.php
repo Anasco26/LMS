@@ -52,7 +52,7 @@
         type: 'column'
     },
     title: {
-        text: 'Outgoing Goods Report'
+        text: 'Outgoing Stocks Report'
     },
     subtitle: {
         text: 'Outgoing Item Stats'
@@ -106,7 +106,7 @@
 </script>
 
 						
-                </div><a href="<?php echo base_url();?>website/laporankeluarpdf" class="btn btn-success btn-block btn-lg" style="margin-top: 30px !important;" target="_blank">Download PDF Outgoing Goods Report</a>
+                </div><a href="<?php echo base_url();?>website/laporankeluarpdf" class="btn btn-success btn-block btn-lg" style="margin-top: 30px !important;" target="_blank">Download PDF Outgoing Stocks Report</a>
             </div>
         </div>
     </div>
