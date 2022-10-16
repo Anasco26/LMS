@@ -205,7 +205,7 @@
                                 <input type="text" class="form-control input-sm" id="nama_barang" name="nama_barang" placeholder="Item name" required/>
                             </div>
                             <div class="form-group form-material">
-                                <label class="control-label" for="inputText">Brand</label>
+                                <label class="control-label" for="inputText">Category</label>
                                 <input type="text" class="form-control input-sm" id="merek" name="merek" placeholder="Brand" required/>
                             </div>
                             <div class='button center'>

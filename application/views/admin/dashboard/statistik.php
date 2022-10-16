@@ -27,13 +27,13 @@
                                 <h3>
                                     <?php echo $jml_data_transaksi_masuk ?>
                                 </h3>
-                                <p>Incoming Goods</p>
+                                <p>Incoming Stocks</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-archive"></i>
                             </div>
                             <a href="<?php echo site_url();?>website/masuk" class="small-box-footer">
-                            View Incoming Goods
+                            View Incoming Stocks
                                 <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
@@ -44,13 +44,13 @@
                                 <h3>
                                     <?php echo $jml_data_transaksi_keluar ?>
                                 </h3>
-                                <p>Outgoing Goods</p>
+                                <p>Outgoing Stocks</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-archive"></i>
                             </div>
                             <a href="<?php echo site_url();?>website/keluar" class="small-box-footer">
-                            View Outgoing Goods
+                            View Outgoing Stocks
                                 <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
@@ -96,7 +96,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4><b>Low Stock Goods:</b></h4>
+                <h4><b>Low Stock Stocks:</b></h4>
                 <hr>
                 <div class="list-group rounded-0" id="notif-list">
                     <?php foreach($notif as $row): ?>
