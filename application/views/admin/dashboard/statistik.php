@@ -95,12 +95,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4><b>Low Stock Goods:</b></h4>
+            <div class="col-12">
+                <h4><b>Low Livestock Goods:</b></h4>
                 <hr>
                 <div class="list-group rounded-0" id="notif-list">
                     <?php foreach($notif as $row): ?>
-                        <div class="list-group-item list-group-item-action bg-danger rounded-0 border border-light"><?= $row['nama_barang'] ?> has only <b><?= $row['qty'] ?></b> Stock Left.</div>
+                        <div class="list-group-item list-group-item-action bg-danger rounded-0 border border-light"><?= $row['nama_barang'] ?> has only <b><?= $row['qty'] ?></b> Livestock Left.</div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="col-12">
+                <h4><b>Low Animal Feed:</b></h4>
+                <hr>
+                <div class="list-group rounded-0" id="notif-list">
+                    <?php foreach($notif1 as $row): ?>
+                        <div class="list-group-item list-group-item-action bg-danger rounded-0 border border-light"><?= $row['nama_feeds'] ?> has only <b><?= $row['qty'] ?></b> Feeds Left.</div>
                     <?php endforeach; ?>
                 </div>
             </div>

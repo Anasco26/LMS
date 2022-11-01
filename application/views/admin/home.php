@@ -7,50 +7,50 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 	<title>ADMINISTRATOR -
-		<?php echo $web->identitas_website;?>
+		<?php echo $web->identitas_website; ?>
 	</title>
-	<meta name="description" content="<?php echo $web->identitas_deskripsi;?>" />
-	<meta name="keywords" content="<?php echo $web->identitas_keyword;?>" />
-	<meta name="author" content="<?php echo $web->identitas_author;?>" />
+	<meta name="description" content="<?php echo $web->identitas_deskripsi; ?>" />
+	<meta name="keywords" content="<?php echo $web->identitas_keyword; ?>" />
+	<meta name="author" content="<?php echo $web->identitas_author; ?>" />
 
-	<link rel="apple-touch-icon" href="<?php echo base_url();?>assets/<?php echo $web->identitas_favicon;?>">
-	<link rel="shortcut icon" href="<?php echo base_url();?>assets/<?php echo $web->identitas_favicon;?>">
+	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/<?php echo $web->identitas_favicon; ?>">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/<?php echo $web->identitas_favicon; ?>">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/css/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/css/bootstrap/bootstrap-extend.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/css/bootstrap/bootstrap-extend.css">
 
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/css/style.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/css/app.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/css/app.css">
 
 	<!-- Libs CSS -->
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/libs/animsition/animsition.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/libs/asscrollable/asScrollable.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/libs/intro-js/introjs.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/libs/slidepanel/slidePanel.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/libs/flag-icon-css/flag-icon.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/libs/animsition/animsition.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/libs/asscrollable/asScrollable.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/libs/intro-js/introjs.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/libs/slidepanel/slidePanel.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/libs/flag-icon-css/flag-icon.css">
 
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/libs/formvalidation/formValidation.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/libs/formvalidation/formValidation.css">
 
 	<!-- Fonts -->
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/fonts/web-icons/web-icons.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/fonts/brand-icons/brand-icons.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>templates/backend/assets/fonts/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/fonts/web-icons/web-icons.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/fonts/brand-icons/brand-icons.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>templates/backend/assets/fonts/font-awesome/4.5.0/css/font-awesome.min.css">
 
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/jquery/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/jquery/jquery.js"></script>
 	<!--[if lt IE 9]>
-    <script src="../../<?php echo base_url();?>templates/admin/assets/libs/html5shiv/html5shiv.min.js"></script>
+    <script src="../../<?php echo base_url(); ?>templates/admin/assets/libs/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
 
 	<!--[if lt IE 10]>
-    <script src="../../<?php echo base_url();?>templates/admin/assets/libs/media-match/media.match.min.js"></script>
-    <script src="../../<?php echo base_url();?>templates/admin/assets/libs/respond/respond.min.js"></script>
+    <script src="../../<?php echo base_url(); ?>templates/admin/assets/libs/media-match/media.match.min.js"></script>
+    <script src="../../<?php echo base_url(); ?>templates/admin/assets/libs/respond/respond.min.js"></script>
     <![endif]-->
 
 	<!-- Scripts -->
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/modernizr/modernizr.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/breakpoints/breakpoints.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/modernizr/modernizr.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/breakpoints/breakpoints.js"></script>
 	<script>
 		Breakpoints();
 	</script>
@@ -68,9 +68,9 @@
 				<i class="icon wb-more-horizontal" aria-hidden="true"></i>
 			</button>
 			<div class="navbar-brand navbar-brand-center">
-				<img class="navbar-brand-logo" src="<?php echo base_url();?>assets/<?php echo $web->identitas_favicon;?>" title="Remark">
+				<img class="navbar-brand-logo" src="<?php echo base_url(); ?>assets/<?php echo $web->identitas_favicon; ?>" title="Remark">
 				<span class="navbar-brand-text">
-					<?php echo $web->identitas_website;?>
+					<?php echo $web->identitas_website; ?>
 				</span>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 				</ul>
 				<ul class="breadcrumb">
 					<li class="active">
-						<a href="<?php echo base_url();?>admin">Dashboard</a>
+						<a href="<?php echo base_url(); ?>admin">Dashboard</a>
 					</li>
 					<li>
 						<?php echo $breadcrumb; ?>
@@ -105,21 +105,20 @@
 						</a>
 					</li>
 					<li class="dropdown">
-						<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="" aria-expanded="false" data-animation="slide-bottom"
-						    role="button">
+						<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="" aria-expanded="false" data-animation="slide-bottom" role="button">
 							<span class="avatar avatar-online">
-								<img src="<?php echo base_url();?>templates/backend/assets/images/avatar/avatar.jpg" alt="...">
+								<img src="<?php echo base_url(); ?>templates/backend/assets/images/avatar/avatar.jpg" alt="...">
 								<i></i>
 							</span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
 							<li role="presentation">
-								<a href="<?php echo base_url();?>users/edit_password" role="menuitem">
+								<a href="<?php echo base_url(); ?>users/edit_password" role="menuitem">
 									<i class="icon wb-user" aria-hidden="true"></i> Edit Password</a>
 							</li>
 							<li class="divider" role="presentation"></li>
 							<li role="presentation">
-								<a href="<?php echo site_url();?>login/keluar" role="menuitem">
+								<a href="<?php echo site_url(); ?>login/keluar" role="menuitem">
 									<i class="icon wb-power" aria-hidden="true"></i> Logout</a>
 							</li>
 						</ul>
@@ -136,7 +135,7 @@
 					<ul class="site-menu">
 						<li class="site-menu-category">Main-Menu</li>
 						<li class='site-menu-item'>
-							<a href='<?php echo base_url();?>admin' class='animsition-link'>
+							<a href='<?php echo base_url(); ?>admin' class='animsition-link'>
 								<i class='site-menu-icon fa fa-dashboard'></i>
 								<span class='site-menu-title'>
 									Dashboard
@@ -151,28 +150,28 @@
 								<span class='site-menu-title'>Forms</span>
 							</a>
 							<ul class='site-menu-sub'>
-								<?php if($admin->admin_level_kode === '1' || $admin->admin_level_kode === '2') {?>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/supplier' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-											Supplier
-										</span>
-									</a>
-								</li>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '2') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/supplier' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Supplier
+											</span>
+										</a>
+									</li>
 								<?php } ?>
-								<?php if($admin->admin_level_kode === '1' || $admin->admin_level_kode === '3') {?>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/customer' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-											Distributor
-										</span>
-									</a>
-								</li>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '3') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/customer' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Distributor
+											</span>
+										</a>
+									</li>
 								<?php } ?>
 								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>users/users' class='animsition-link'>
+									<a href='<?php echo base_url(); ?>users/users' class='animsition-link'>
 										<i class='site-menu-icon fa fa-angle-right'></i>
 										<span class='site-menu-title'>
 											System Users
@@ -181,25 +180,45 @@
 								</li>
 							</ul>
 						</li>
-						
+
 						<li class='site-menu-item'>
-							<a href='<?php echo base_url();?>website/barang' class='animsition-link'>
+							<a href='<?php echo base_url(); ?>website/barang' class='animsition-link'>
 								<i class='site-menu-icon fa fa-archive'></i>
 								<span class='site-menu-title'>
-								Livestocks
+									Livestocks
 								</span>
 							</a>
 						</li>
-						<?php if($admin->admin_level_kode === '1'):?>
-						<li class='site-menu-item'>
-							<a href='<?php echo base_url();?>website/stock/edit/1' class='animsition-link'>
-								<i class='site-menu-icon fa fa-list'></i>
-								<span class='site-menu-title'>
-								Minimum Stock
-								</span>
+						<li class='site-menu-item has-sub'>
+							<a href='javascript:void(0)' class='animsition-link'>
+								<span class='site-menu-arrow'></span>
+								<i class='site-menu-icon fa fa fa-paper-plane'></i>
+								<span class='site-menu-title'>Feeds</span>
 							</a>
+							<ul class='site-menu-sub'>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '2') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/feeds' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												New Feeds
+											</span>
+										</a>
+									</li>
+								<?php } ?>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '3') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/feeding' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Used Feeds
+											</span>
+										</a>
+									</li>
+								<?php } ?>
+							</ul>
 						</li>
-						<?php endif; ?>
+						
 						<li class='site-menu-item has-sub'>
 							<a href='javascript:void(0)' class='animsition-link'>
 								<span class='site-menu-arrow'></span>
@@ -207,83 +226,154 @@
 								<span class='site-menu-title'>Transactions</span>
 							</a>
 							<ul class='site-menu-sub'>
-								<?php if($admin->admin_level_kode === '1' || $admin->admin_level_kode === '2') {?>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/masuk' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-										Incoming Stocks
-										</span>
-									</a>
-								</li>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '2') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/masuk' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Incoming Livestocks
+											</span>
+										</a>
+									</li>
 								<?php } ?>
-								<?php if($admin->admin_level_kode === '1' || $admin->admin_level_kode === '3') {?>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/keluar' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-										Outgoing Stocks
-										</span>
-									</a>
-								</li>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '3') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/keluar' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Outgoing Livestocks
+											</span>
+										</a>
+									</li>
 								<?php } ?>
-								<?php if($admin->admin_level_kode === '1') {?>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/penyesuaian' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-											Adjustment
-										</span>
-									</a>
-								</li>
+								<?php if ($admin->admin_level_kode === '1') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/penyesuaian' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Adjustment
+											</span>
+										</a>
+									</li>
 								<?php } ?>
 							</ul>
 						</li>
-						<?php if($admin->admin_level_kode === '1') {?>
+						
 						<li class='site-menu-item has-sub'>
 							<a href='javascript:void(0)' class='animsition-link'>
 								<span class='site-menu-arrow'></span>
-								<i class='site-menu-icon fa fa fa-bar-chart'></i>
-								<span class='site-menu-title'>Reports</span>
+								<i class='site-menu-icon fa fa fa-trash'></i>
+								<span class='site-menu-title'>Damages</span>
 							</a>
 							<ul class='site-menu-sub'>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/laporanmasuk' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-										Incoming Stocks
-										</span>
-									</a>
-								</li>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/laporankeluar' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-										Outgoing Stocks
-										</span>
-									</a>
-								</li>
-								<li class='site-menu-item'>
-									<a href='<?php echo base_url();?>website/laporanpenyesuaian' class='animsition-link'>
-										<i class='site-menu-icon fa fa-angle-right'></i>
-										<span class='site-menu-title'>
-										 Adjustment
-										</span>
-									</a>
-								</li>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '2') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/sick' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Quarantined Livestocks
+											</span>
+										</a>
+									</li>
+								<?php } ?>
+								<?php if ($admin->admin_level_kode === '1' || $admin->admin_level_kode === '3') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/dead' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Dead Livestocks
+											</span>
+										</a>
+									</li>
+								<?php } ?>
+								<?php if ($admin->admin_level_kode === '1') { ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/penyesuaian' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Detailed Records
+											</span>
+										</a>
+									</li>
+								<?php } ?>
 							</ul>
 						</li>
-						<?php } ?>
 						
-						<?php if($admin->admin_level_kode === '1'):?>
-						<li class='site-menu-item'>
-							<a href='<?php echo base_url();?>website/identitas/edit/1' class='animsition-link'>
-								<i class='site-menu-icon fa fa-cogs'></i>
-								<span class='site-menu-title'>
-								System Information
-								</span>
+						<li class='site-menu-item has-sub'>
+							<a href='javascript:void(0)' class='animsition-link'>
+								<span class='site-menu-arrow'></span>
+								<i class='site-menu-icon fa fa-bell'></i>
+								<span class='site-menu-title'>Set Notification</span>
 							</a>
+							<ul class='site-menu-sub'>
+								<?php if ($admin->admin_level_kode === '1') : ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/stock/edit/1' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Set Minimum Stock
+											</span>
+										</a>
+									</li>
+								<?php endif; ?>
+								<?php if ($admin->admin_level_kode === '1') : ?>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/feedlimit/edit/1' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Set Minimum Feeds
+											</span>
+										</a>
+									</li>
+								<?php endif; ?>
+							</ul>
 						</li>
+
+						<?php if ($admin->admin_level_kode === '1') { ?>
+							<li class='site-menu-item has-sub'>
+								<a href='javascript:void(0)' class='animsition-link'>
+									<span class='site-menu-arrow'></span>
+									<i class='site-menu-icon fa fa fa-bar-chart'></i>
+									<span class='site-menu-title'>Reports</span>
+								</a>
+								<ul class='site-menu-sub'>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/laporanmasuk' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Incoming LIvestocks
+											</span>
+										</a>
+									</li>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/laporankeluar' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Outgoing Livestocks
+											</span>
+										</a>
+									</li>
+									<li class='site-menu-item'>
+										<a href='<?php echo base_url(); ?>website/laporanpenyesuaian' class='animsition-link'>
+											<i class='site-menu-icon fa fa-angle-right'></i>
+											<span class='site-menu-title'>
+												Adjustment
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						<?php } ?>
+
+						<?php if ($admin->admin_level_kode === '1') : ?>
+							<li class='site-menu-item'>
+								<a href='<?php echo base_url(); ?>website/identitas/edit/1' class='animsition-link'>
+									<i class='site-menu-icon fa fa-cogs'></i>
+									<span class='site-menu-title'>
+										System Information
+									</span>
+								</a>
+							</li>
 						<?php endif; ?>
 					</ul>
 
@@ -291,86 +381,90 @@
 			</div>
 		</div>
 		<div class="site-menubar-footer">
-			<a href="<?php echo site_url();?>admin" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Dashboard">
+			<a href="<?php echo site_url(); ?>admin" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Dashboard">
 				<span class="icon wb-home" aria-hidden="true"></span>
 			</a>
-			<a href="<?php echo site_url();?>users/edit_password" data-placement="top" data-toggle="tooltip" data-original-title="Edit Password">
+			<a href="<?php echo site_url(); ?>users/edit_password" data-placement="top" data-toggle="tooltip" data-original-title="Edit Password">
 				<span class="icon wb-lock" aria-hidden="true"></span>
 			</a>
-			<a href="<?php echo site_url();?>login/keluar" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
+			<a href="<?php echo site_url(); ?>login/keluar" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
 				<span class="icon wb-power" aria-hidden="true"></span>
 			</a>
 		</div>
 	</div>
 
 	<!-- Content -->
-	<?php $this->load->view($content);?>
+	<?php $this->load->view($content); ?>
 	<!-- End Content -->
 
 	<footer class="site-footer">
-		<span class="site-footer-legal">© <?php echo date('Y');?>
-			<?php echo $web->identitas_website;?>
+		<span class="site-footer-legal">© <?php echo date('Y'); ?>
+			<?php echo $web->identitas_website; ?>
 		</span>
 		<div class="site-footer-right">
-			<?php echo $web->identitas_author;?>
+			<?php echo $web->identitas_author; ?>
 		</div>
 	</footer>
 
 	<script>
-		$('#modal-konfirmasi').on('show.bs.modal', function (event) {
+		$('#modal-konfirmasi').on('show.bs.modal', function(event) {
 			var div = $(event.relatedTarget)
 			var id = div.data('id')
 			var modal = $(this)
-			modal.find('#hapus-pengguna').attr("href", "<?php echo site_url();?>users/users/hapus/" + id);
-			modal.find('#hapus-supplier').attr("href", "<?php echo site_url();?>website/supplier/hapus/" + id);
-			modal.find('#hapus-customer').attr("href", "<?php echo site_url();?>website/customer/hapus/" + id);
-			modal.find('#hapus-barang').attr("href", "<?php echo site_url();?>website/barang/hapus/" + id);
-			modal.find('#hapus-masuk').attr("href", "<?php echo site_url();?>website/masuk/hapus/" + id);
-			modal.find('#hapus-keluar').attr("href", "<?php echo site_url();?>website/keluar/hapus/" + id);
-			modal.find('#hapus-penyesuaian').attr("href", "<?php echo site_url();?>website/penyesuaian/hapus/" + id);
+			modal.find('#hapus-pengguna').attr("href", "<?php echo site_url(); ?>users/users/hapus/" + id);
+			modal.find('#hapus-supplier').attr("href", "<?php echo site_url(); ?>website/supplier/hapus/" + id);
+			modal.find('#hapus-customer').attr("href", "<?php echo site_url(); ?>website/customer/hapus/" + id);
+			modal.find('#hapus-barang').attr("href", "<?php echo site_url(); ?>website/barang/hapus/" + id);
+			modal.find('#hapus-feeds').attr("href", "<?php echo site_url(); ?>website/feeds/hapus/" + id);
+			modal.find('#hapus-masuk').attr("href", "<?php echo site_url(); ?>website/masuk/hapus/" + id);
+			modal.find('#hapus-keluar').attr("href", "<?php echo site_url(); ?>website/keluar/hapus/" + id);
+			modal.find('#hapus-feeding').attr("href", "<?php echo site_url(); ?>website/feeding/hapus/" + id);
+			modal.find('#hapus-dead').attr("href", "<?php echo site_url(); ?>website/dead/hapus/" + id);
+			modal.find('#hapus-sick').attr("href", "<?php echo site_url(); ?>website/sick/hapus/" + id);
+			modal.find('#hapus-penyesuaian').attr("href", "<?php echo site_url(); ?>website/penyesuaian/hapus/" + id);
 		});
 	</script>
 
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/bootstrap/bootstrap.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/bootstrap/bootstrap.js"></script>
 
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/animsition/jquery.animsition.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/asscroll/jquery-asScroll.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/mousewheel/jquery.mousewheel.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/asscrollable/jquery.asScrollable.all.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/ashoverscroll/jquery-asHoverScroll.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/animsition/jquery.animsition.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/asscroll/jquery-asScroll.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/mousewheel/jquery.mousewheel.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/asscrollable/jquery.asScrollable.all.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/ashoverscroll/jquery-asHoverScroll.js"></script>
 	<!-- Plugins -->
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/intro-js/intro.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/screenfull/screenfull.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/slidepanel/jquery-slidePanel.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/jquery-placeholder/jquery.placeholder.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/intro-js/intro.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/screenfull/screenfull.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/slidepanel/jquery-slidePanel.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/jquery-placeholder/jquery.placeholder.js"></script>
 
 
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/formvalidation/formValidation.min.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/formvalidation/formValidation.min.js"></script>
 
-	<script src="<?php echo base_url();?>templates/backend/assets/libs/formvalidation/framework/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/libs/formvalidation/framework/bootstrap.min.js"></script>
 
 	<!-- Scripts -->
-	<script src="<?php echo base_url();?>templates/backend/assets/js/core/core.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/site/site.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/sections/menu.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/sections/menubar.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/sections/sidebar.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/configs/config-colors.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/configs/config-tour.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/components/asscrollable.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/components/animsition.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/components/slidepanel.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/components/jquery-placeholder.js"></script>
-	<script src="<?php echo base_url();?>templates/backend/assets/js/components/material.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/core/core.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/site/site.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/sections/menu.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/sections/menubar.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/sections/sidebar.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/configs/config-colors.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/configs/config-tour.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/components/asscrollable.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/components/animsition.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/components/slidepanel.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/components/jquery-placeholder.js"></script>
+	<script src="<?php echo base_url(); ?>templates/backend/assets/js/components/material.js"></script>
 	<script>
-		(function (document, window, $) {
+		(function(document, window, $) {
 			'use strict';
 			var Site = window.Site;
-			$(document).ready(function ($) {
+			$(document).ready(function($) {
 				Site.run();
 			});
 
-			(function () {
+			(function() {
 				$('#exampleStandardForm').formValidation({
 					framework: "bootstrap",
 					button: {
@@ -381,7 +475,7 @@
 				});
 			})();
 
-			(function () {
+			(function() {
 				$('.summary-errors').hide()
 			})();
 		})(document, window, jQuery);

@@ -202,6 +202,66 @@ class M_admin extends CI_Model  {
         $data = $Q->num_rows();
         return $data;
 	}
+//CONFIGURATION TABEL LIMIT Feeds
+	public function insert_limitfeed($data){
+        $this->db->insert("limitfeed",$data);
+    }
+    
+    public function update_limitfeed($where,$data){
+        $this->db->update("limitfeed",$data,$where);
+    }
+
+    public function delete_limitfeed($where){
+        $this->db->delete("limitfeed", $where);
+    }
+
+	public function get_limitfeed($select, $where){
+        $data = "";
+		$this->db->select($select);
+        $this->db->from("limitfeed");
+		$this->db->where($where);
+		$this->db->limit(1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0){
+			$data = $Q->row();
+		}
+		$Q->free_result();
+		return $data;
+	}
+
+    public function grid_all_limitfeed($select, $sidx, $sord, $limit, $start, $where="", $like=""){
+        $data = "";
+        $this->db->select($select);
+        $this->db->from("limitfeed");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $this->db->order_by($sidx,$sord);
+        $this->db->limit($limit,$start);
+        $Q = $this->db->get();
+        if ($Q->num_rows() > 0){
+            $data=$Q->result();
+        }
+        $Q->free_result();
+        return $data;
+    }
+
+    public function count_all_limitfeed($where="", $like=""){
+        $this->db->select("*");
+        $this->db->from("limitfeed");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $Q=$this->db->get();
+        $data = $Q->num_rows();
+        return $data;
+	}
 
 	//CONFIGURATION TABEL SUPPLIER
 	public function insert_supplier($data){
@@ -386,6 +446,67 @@ class M_admin extends CI_Model  {
         return $data;
 	}
 	
+	//CONFIGURATION TABEL DAMAGED
+	public function insert_damaged($data){
+        $this->db->insert("damaged_barang",$data);
+    }
+    
+    public function update_damaged($where,$data){
+        $this->db->update("damaged_barang",$data,$where);
+    }
+
+    public function delete_damaged($where){
+        $this->db->delete("damaged_barang", $where);
+    }
+
+	public function get_damaged($select, $where){
+        $data = "";
+		$this->db->select($select);
+        $this->db->from("damaged_barang");
+		$this->db->where($where);
+		$this->db->limit(1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0){
+			$data = $Q->row();
+		}
+		$Q->free_result();
+		return $data;
+	}
+
+    public function grid_all_damaged($select, $sidx, $sord, $limit, $start, $where="", $like=""){
+        $data = "";
+        $this->db->select($select);
+        $this->db->from("damaged_barang");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $this->db->order_by($sidx,$sord);
+        $this->db->limit($limit,$start);
+        $Q = $this->db->get();
+        if ($Q->num_rows() > 0){
+            $data=$Q->result();
+        }
+        $Q->free_result();
+        return $data;
+    }
+
+    public function count_all_damaged($where="", $like=""){
+        $this->db->select("*");
+        $this->db->from("damaged_barang");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $Q=$this->db->get();
+        $data = $Q->num_rows();
+        return $data;
+	}
+
 	//CONFIGURATION TABLE ADMIN
 	public function insert_admin($data){
         $this->db->insert("admin",$data);
@@ -592,10 +713,142 @@ class M_admin extends CI_Model  {
 			}
 		}
 	}
+
+	//CONFIGURATION TABEL FEEDS
+	public function insert_feeds($data){
+        $this->db->insert("feeds",$data);
+    }
+    
+    public function update_feeds($where,$data){
+        $this->db->update("feeds",$data,$where);
+    }
+
+    public function delete_feeds($where){
+        $this->db->delete("feeds", $where);
+    }
+
+	public function get_feeds($select, $where){
+        $data = "";
+		$this->db->select($select);
+        $this->db->from("feeds");
+		$this->db->where($where);
+		$this->db->limit(1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0){
+			$data = $Q->row();
+		}
+		$Q->free_result();
+		return $data;
+	}
+
+    public function grid_all_feeds($select, $sidx, $sord, $limit, $start, $where="", $like=""){
+        $data = "";
+        $this->db->select($select);
+        $this->db->from("feeds");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $this->db->order_by($sidx,$sord);
+        $this->db->limit($limit,$start);
+        $Q = $this->db->get();
+        if ($Q->num_rows() > 0){
+            $data=$Q->result();
+        }
+        $Q->free_result();
+        return $data;
+    }
+
+    public function count_all_feeds($where="", $like=""){
+        $this->db->select("*");
+        $this->db->from("feeds");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $Q=$this->db->get();
+        $data = $Q->num_rows();
+        return $data;
+	}
+
+	//CONFIGURATION TABEL FEEDING
+	public function insert_feeding($data){
+        $this->db->insert("feeding_barang",$data);
+    }
+    
+    public function update_feeding($where,$data){
+        $this->db->update("feeding_barang",$data,$where);
+    }
+
+    public function delete_feeding($where){
+        $this->db->delete("feeding_barang", $where);
+    }
+
+	public function get_feeding($select, $where){
+        $data = "";
+		$this->db->select($select);
+        $this->db->from("feeding_barang");
+		$this->db->where($where);
+		$this->db->limit(1);
+		$Q = $this->db->get();
+		if ($Q->num_rows() > 0){
+			$data = $Q->row();
+		}
+		$Q->free_result();
+		return $data;
+	}
+
+    public function grid_all_feeding($select, $sidx, $sord, $limit, $start, $where="", $like=""){
+        $data = "";
+        $this->db->select($select);
+        $this->db->from("feeding_barang");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $this->db->order_by($sidx,$sord);
+        $this->db->limit($limit,$start);
+        $Q = $this->db->get();
+        if ($Q->num_rows() > 0){
+            $data=$Q->result();
+        }
+        $Q->free_result();
+        return $data;
+    }
+
+    public function count_all_feeding($where="", $like=""){
+        $this->db->select("*");
+        $this->db->from("feeding_barang");
+		if ($where){$this->db->where($where);}
+		if ($like){
+			foreach($like as $key => $value){ 
+			$this->db->like($key, $value); 
+			}
+		}
+        $Q=$this->db->get();
+        $data = $Q->num_rows();
+        return $data;
+	}
+	
 	// Get Low Stock
 	public function get_low_stock(){
 		$limit_stock  = $this->db->query("SELECT `stock` from limitstock where limitstock_id = 1")->row()->stock;
 		$sql = "SELECT *,(COALESCE((SELECT SUM(jumlah) FROM transaksi_barang where id_barang = master_barang.id_barang and status_pergerakan = 1), 0) - COALESCE((SELECT SUM(jumlah) FROM transaksi_barang where id_barang = master_barang.id_barang and status_pergerakan = 2), 0)) as `qty` FROM master_barang where (COALESCE((SELECT SUM(jumlah) FROM transaksi_barang where id_barang = master_barang.id_barang and status_pergerakan = 1), 0) - COALESCE((SELECT SUM(jumlah) FROM transaksi_barang where id_barang = master_barang.id_barang and status_pergerakan = 2), 0)) <= $limit_stock order by nama_barang asc";
+		$query = $this->db->query($sql);
+		$data = $query->result_array();
+		return $data;
+	}
+
+	// Get Low feed
+	public function get_low_feeds(){
+		$limit_feeds  = $this->db->query("SELECT `feeds` from limitfeed where limitfeed_id = 1")->row()->feeds;
+		$sql = "SELECT *,(COALESCE((SELECT SUM(jumlah) FROM feeds where id_feeds = feeds.id_feeds), 0)) as `qty` FROM feeds where (COALESCE((SELECT SUM(jumlah) FROM feeds where id_feeds = feeds.id_feeds), 0) ) <= $limit_feeds order by nama_feeds asc";
 		$query = $this->db->query($sql);
 		$data = $query->result_array();
 		return $data;

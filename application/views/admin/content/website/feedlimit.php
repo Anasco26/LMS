@@ -18,7 +18,7 @@
 			<div class="col-md-12">
 				<div class="panel rounded-0">
 					<div class="panel-heading">
-						<h5 class="panel-title">Minimal Edit Livestock Notifications</h5>
+						<h5 class="panel-title">Minimal Edit Limit Feeds Notifications</h5>
 					</div>
 					<!-- ========== Flashdata ========== -->
 					<?php if ($this->session->flashdata('success') || $this->session->flashdata('warning') || $this->session->flashdata('error')) { ?>
@@ -44,22 +44,22 @@
 					<?php } ?>
 					<!-- ========== End Flashdata ========== -->
 					<div class="panel-body container-fluid">
-						<form action="<?php echo site_url();?>website/stock/edit/<?php echo $limitstock_id;?>" method="post" enctype="multipart/form-data"
+						<form action="<?php echo site_url();?>website/feedlimit/edit/<?php echo $limitfeed_id;?>" method="post" enctype="multipart/form-data"
 						id="exampleStandardForm" autocomplete="off">
-							<input type="hidden" name="limitstock_id" value="<?php echo $limitstock_id;?>" />
+							<input type="hidden" name="limitfeed_id" value="<?php echo $limitfeed_id;?>" />
 							<div class="form-group form-material">
-								<label class="control-label" for="inputText">Stock</label>
-								<input type="text" class="form-control input-sm" id="stock" name="stock" placeholder="Enter Stock"
-								value="<?php echo $stock;?>" required />
+								<label class="control-label" for="inputText">Feeds</label>
+								<input type="text" class="form-control input-sm" id="feeds" name="feeds" placeholder="Enter Feeds"
+								value="<?php echo $feeds;?>" required />
 							</div>
 							<div class="form-group form-material">
 								<label class="control-label" for="inputText">Created</label>
-								<input type="text" disabled class="form-control input-sm" id="limitstock_created" name="limitstock_created" value="<?php echo $limitstock_created;?>"
+								<input type="text" disabled class="form-control input-sm" id="limitfeed_created" name="limitfeed_created" value="<?php echo $limitfeed_created;?>"
 								/>
 							</div>
 							<div class="form-group form-material">
 								<label class="control-label" for="inputText">Last Changed</label>
-								<input type="text" disabled class="form-control input-sm" id="limitstock_updated" name="limitstock_updated" value="<?php echo $limitstock_updated;?>"
+								<input type="text" disabled class="form-control input-sm" id="limitfeed_updated" name="limitfeed_updated" value="<?php echo $limitfeed_updated;?>"
 								/>
 							</div>
 							<div class='button center'>

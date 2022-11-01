@@ -69,7 +69,7 @@
 										</div>
 										<div class='btn-navigation'>
 											<div class='pull-right'>
-												<a class="btn btn-success" href="<?php echo site_url(); ?>website/masuk"><i class="fa fa-refresh"></i></a>
+												<a class="btn btn-success" href="<?php echo site_url(); ?>website/dead"><i class="fa fa-refresh"></i></a>
 											</div>
 										</div>
 									</form>
@@ -78,9 +78,11 @@
 									<table class="table table-hover table-striped table-bordered">
 										<thead>
 											<th width=80>#</th>
-											<th width=120>Goods</th>
-											<th width=150>Supplier</th>
+											<th width=120>Livestocks</th>
+											<th width=160>Admin Name</th>
+											<th width=160>Cause of Death</th>
 											<th width=80 class="text-center">Total</th>
+											<th width=160>Comment</th>
 											<th width=270>Date</th>
 											<?php if ($admin->admin_level_kode == 1) { ?>
 												<th class="text-center">Action</th>
@@ -89,10 +91,10 @@
 										<tbody>
 											<?php
 											$i	= $page + 1;
-											$where_transaksi['status_pergerakan'] 	= 1;
-											$like_transaksi[$cari]			= $q;
+											$where_damaged['status_pergerakan'] 	= 1;
+											$like_damaged[$cari]			= $q;
 											if ($jml_data > 0) {
-												foreach ($this->ADM->grid_all_transaksi('', 'tanggal_transaksi', 'DESC', $batas, $page, $where_transaksi, $like_transaksi) as $row) {
+												foreach ($this->ADM->grid_all_damaged('', 'tanggal_damaged', 'DESC', $batas, $page, $where_damaged, $like_damaged) as $row) {
 											?>
 													<tr>
 														<td>
@@ -103,29 +105,32 @@
 															$where_barang['id_barang'] 	= $row->id_barang;
 															foreach ($this->ADM->grid_all_barang('', 'id_barang', 'DESC', 100, '', $where_barang, '') as $row2) { ?>
 																<b>Name: <?php echo $row2->nama_barang; ?></b> <br>
-																Category: <?php echo $row2->merek; ?>
+																Brand: <?php echo $row2->merek; ?>
 															<?php } ?>
 														</td>
 														<td>
 															<?php
-															$where_supplier['id_supplier'] 	= $row->id_supplier;
-															foreach ($this->ADM->grid_all_supplier('', 'id_supplier', 'DESC', 100, '', $where_supplier, '') as $row3) { ?>
-																<b>Name: <?php echo $row3->nama_supplier; ?></b> <br>
-																Address: <?php echo $row3->alamat_supplier; ?> <br>
-																Phone: <?php echo $row3->notelp_supplier; ?> <br>
-															<?php } ?>
+															$where_admin['admin_user'] 	= $row->admin_user;
+															foreach ($this->ADM->grid_all_admin('', 'admin_user', 'DESC', 100, '', $where_admin, '') as $row3) {
+																echo $row3->admin_nama;
+															} ?>
+														</td>
+														<td >
+															<?php echo $row->reason; ?>
 														</td>
 														<td class="text-center" style="color: red !important">
 															<?php echo $row->jumlah; ?>
 														</td>
+														<td >
+															<?php echo $row->comment; ?>
+														</td>
 														<td>
-															<b>Created:</b> <?php echo dateIndo($row->tanggal_transaksi); ?><br>
-															<b>Last Updated:</b> <?php echo dateIndo($row->transaksi_updated); ?>
+															<?php echo dateIndo($row->tanggal_damaged); ?>
 														</td>
 														<?php if ($admin->admin_level_kode == 1) { ?>
 															<td class="text-center action">
 
-																<a class="text-danger" href="javascript:;" data-id="<?php echo $row->id_transaksi; ?>" data-toggle="modal" data-target="#modal-konfirmasi" title="<?php echo $row->id_transaksi; ?>">
+																<a class="text-danger" href="javascript:;" data-id="<?php echo $row->id_damaged; ?>" data-toggle="modal" data-target="#modal-konfirmasi" title="<?php echo $row->id_damaged; ?>">
 																	<i class="icon wb-trash"></i>
 																</a>
 															</td>
@@ -137,7 +142,7 @@
 											} else {
 												?>
 												<tr>
-													<td colspan="7">No data yet!</td>
+													<td colspan="8">No data yet!</td>
 												</tr>
 											<?php } ?>
 										</tbody>
@@ -149,7 +154,7 @@
 											<div class='pagination-right'>
 												<ul class="pagination">
 													<?php if ($jml_halaman > 1) {
-														echo pages($halaman, $jml_halaman, 'website/masuk/view', $id = "");
+														echo pages($halaman, $jml_halaman, 'website/dead/view', $id = "");
 													} ?>
 												</ul>
 											</div>
@@ -166,7 +171,7 @@
 			</div>
 		</div>
 		<?php if ($admin->admin_level_kode == 1) { ?>
-			<a href="<?php echo site_url(); ?>website/masuk/tambah">
+			<a href="<?php echo site_url(); ?>website/dead/tambah">
 				<button class="site-action btn-raised btn btn-sm btn-floating blue" type="button">
 					<i class="icon wb-plus" aria-hidden="true"></i>
 				</button>
@@ -186,7 +191,7 @@
 					Are you sure you want to delete this data?
 				</div>
 				<div class="modal-footer">
-					<a href="javascript:;" class="btn btn-danger" id="hapus-masuk">Yes</a>
+					<a href="javascript:;" class="btn btn-danger" id="hapus-dead">Yes</a>
 					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 				</div>
 			</div>
@@ -214,17 +219,9 @@
 							<h5 class="panel-title">Add <?php echo $breadcrumb; ?></h5>
 						</div>
 						<div class="panel-body container-fluid">
-							<form action="<?php echo site_url(); ?>website/masuk/tambah" method="post" id="exampleStandardForm" autocomplete="off">
+							<form action="<?php echo site_url(); ?>website/dead/tambah" method="post" id="exampleStandardForm" autocomplete="off">
 								<div class="form-group form-material">
-									<div class="form-group form-material">
-										<label class="control-label" for="inputText">Supplier</label>
-										<select name="id_supplier" class="form-control input-sm">
-											<?php foreach ($this->ADM->grid_all_supplier('', 'id_supplier', 'DESC', 100, '', '', '') as $supplier) { ?>
-												<option value="<?php echo $supplier->id_supplier ?>"><?php echo $supplier->nama_supplier ?></option>
-											<?php } ?>
-										</select>
-									</div>
-									<label class="control-label" for="inputText">Goods</label>
+									<label class="control-label" for="inputText">Livestock</label>
 									<select name="id_barang" class="form-control input-sm">
 										<?php foreach ($this->ADM->grid_all_barang('', 'id_barang', 'DESC', 100, '', '', '') as $barang) { ?>
 											<option value="<?php echo $barang->id_barang ?>"><?php echo $barang->nama_barang ?></option>
@@ -235,9 +232,17 @@
 									<label class="control-label" for="inputText">Total</label>
 									<input type="number" class="form-control input-sm" id="jumlah" name="jumlah" placeholder="Total" required />
 								</div>
+								<div class="form-group form-material">
+									<label class="control-label" for="inputText">Cause of Death</label>
+									<input type="text" class="form-control input-sm" id="reason" name="reason" placeholder="Cause of death" required />
+								</div>
+								<div class="form-group form-material">
+									<label class="control-label" for="inputText">Comment</label>
+									<input type="text" class="form-control input-sm" id="comment" name="comment" placeholder="Comment" required />
+								</div>
 								<div class='button center'>
 									<input class="btn btn-success btn-sm" type="submit" name="simpan" value="Add Data" id="validateButton2">
-									<input class="btn btn-danger btn-sm" type="reset" name="batal" value="Cancel" onclick="location.href='<?php echo site_url(); ?>website/masuk'" />
+									<input class="btn btn-danger btn-sm" type="reset" name="batal" value="Cancel" onclick="location.href='<?php echo site_url(); ?>website/dead'" />
 								</div>
 							</form>
 						</div>
@@ -245,7 +250,7 @@
 				</div>
 			</div>
 		</div>
-		<a href="<?php echo site_url(); ?>website/masuk">
+		<a href="<?php echo site_url(); ?>website/dead">
 			<button class="site-action btn-raised btn btn-sm btn-floating blue" type="button">
 				<i class="icon wb-eye" aria-hidden="true"></i>
 			</button>

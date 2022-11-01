@@ -76,7 +76,9 @@
                                         <th width=80>#</th>
                                         <th width=140>Name</th>
                                         <th width=120>Category</th>
-                                        <th width=80 class="text-center">Stock</th>
+                                        <th width=60 class="text-center">Stock</th>
+                                        <th width=60 class="text-center">Temperature</th>
+                                        <th width=150 class="">Feeds</th>
                                         <th width=270>Date</th>
                             <?php if ($admin->admin_level_kode == 1) { ?>
                                         <th class="text-center">Action</th>
@@ -87,7 +89,7 @@
 	                            $i	= $page+1;
                                 $like_barang[$cari]			= $q;
 	                        if ($jml_data > 0){
-                                foreach ($this->ADM->grid_all_barang('*, (COALESCE((SELECT SUM(jumlah) FROM transaksi_barang where id_barang = master_barang.id_barang and status_pergerakan = 1),0) - COALESCE((SELECT SUM(jumlah) FROM transaksi_barang where id_barang = master_barang.id_barang and status_pergerakan = 2),0)) as qty', 'nama_barang', 'ASC', $batas, $page, '', $like_barang) as $row){
+                                foreach ($this->ADM->grid_all_barang('*','nama_barang', 'ASC', $batas, $page, '', $like_barang) as $row){
 	                            ?>
                                         <tr>
                                             <td>
@@ -100,8 +102,20 @@
                                                 <?php echo $row->merek;?>
                                             </td>
                                             <td class="text-center" style="color: red !important">
-                                                <?php echo $row->qty;?>
+                                                <?php echo $row->stock;?>
                                             </td>
+                                            <td>
+                                                <?php echo $row->temperature;?>
+                                            </td>
+                                            <td>
+                                                            <?php
+                                                            $where_barang['id_barang']     = $row->id_barang;
+                                                            $this->db->where('id_barang', $where_barang['id_barang']);
+                                                            $querydb = $this->db->get('feeds');
+                                                            foreach ( $querydb->result() as $row2) { ?>
+                                                                <b>N: <?php echo $row2->nama_feeds; ?>, Q: <?=$row2->jumlah ?></b> <br>
+                                                            <?php } ?>
+                                                        </td>
                                             <td>
                                                 <b>Created:</b> <?php echo dateIndo($row->barang_created);?><br>
                                                 <b>Last modified:</b> <?php echo dateIndo($row->barang_updated);?>
@@ -124,7 +138,7 @@
 	                        } else {
                                 ?>
                                             <tr>
-                                                <td colspan="7">No data yet!</td>
+                                                <td colspan="8">No data yet!</td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
@@ -206,7 +220,7 @@
                             </div>
                             <div class="form-group form-material">
                                 <label class="control-label" for="inputText">Category</label>
-                                <input type="text" class="form-control input-sm" id="merek" name="merek" placeholder="Brand" required/>
+                                <input type="text" class="form-control input-sm" id="merek" name="merek" placeholder="Category" required/>
                             </div>
                             <div class='button center'>
                                 <input class="btn btn-success btn-sm" type="submit" name="simpan" value="Add Data" id="validateButton2">
@@ -254,9 +268,14 @@
                                     required/>
                             </div>
                             <div class="form-group form-material">
-                                <label class="control-label" for="inputText">Brand</label>
+                                <label class="control-label" for="inputText">Category</label>
                                 <input type="text" value="<?php echo $merek; ?>" class="form-control input-sm" id="merek" name="merek"
-                                    placeholder="Brand" required/>
+                                    placeholder="Category" required/>
+                            </div>
+                            <div class="form-group form-material">
+                                <label class="control-label" for="inputText">Temperature</label>
+                                <input type="text" value="<?php echo $temperature; ?>" class="form-control input-sm" id="temperature" name="temperature"
+                                    placeholder="Temperature" required/>
                             </div>
                             <div class='button center'>
                                 <input class="btn btn-success btn-sm" type="submit" name="simpan" value="Update Data" id="validateButton2">

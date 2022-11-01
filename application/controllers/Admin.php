@@ -26,6 +26,7 @@ class Admin extends CI_Controller {
 			$data['menu_terpilih']			= '1';
 			$data['submenu_terpilih']		= '1';
 			$data['notif'] = $this->ADM->get_low_stock();
+			$data['notif1'] = $this->ADM->get_low_feeds();
 			$this->load->vars($data);
 			$this->load->view('admin/home');
 		} else {
