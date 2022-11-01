@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2022 at 12:43 PM
+-- Generation Time: Nov 01, 2022 at 02:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wms_db`
+-- Database: `lms_db`
 --
 
 -- --------------------------------------------------------
@@ -89,6 +89,90 @@ CREATE TABLE `customer` (
   `customer_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id_customer`, `nama_customer`, `alamat_customer`, `notelp_customer`, `customer_created`, `customer_updated`) VALUES
+(11, 'Faith Amos', 'Okene', '09034562346', '2022-10-17 00:17:00', '2022-10-17 00:17:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `damaged_barang`
+--
+
+CREATE TABLE `damaged_barang` (
+  `id_damaged` int(11) NOT NULL,
+  `jumlah` int(50) DEFAULT NULL,
+  `tanggal_damaged` timestamp NULL DEFAULT current_timestamp(),
+  `damaged_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status_pergerakan` char(1) NOT NULL COMMENT 'dead = 1 sick = 2',
+  `reason` varchar(255) NOT NULL,
+  `returned` int(50) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `comment_returned` varchar(255) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `admin_user` varchar(119) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `damaged_barang`
+--
+
+INSERT INTO `damaged_barang` (`id_damaged`, `jumlah`, `tanggal_damaged`, `damaged_updated`, `status_pergerakan`, `reason`, `returned`, `comment`, `comment_returned`, `id_barang`, `admin_user`) VALUES
+(2, 2, '2022-10-29 20:53:41', '2022-10-29 21:53:41', '1', 'Foot and Mouth Disease ', 0, 'Vaccinate others', '', 21, 'admin'),
+(5, 6, '2022-10-29 21:08:36', '2022-10-29 22:08:36', '1', '1', 0, 'Test', '', 21, 'admin'),
+(9, 2, '2022-10-29 22:22:22', '2022-10-31 18:15:04', '2', 'Sick', 2, 'To observe the condition', 'Ok', 21, 'admin'),
+(8, 5, '2022-10-29 21:14:48', '2022-10-29 22:14:48', '1', 'jn', 0, 'n.k', '', 21, 'admin'),
+(10, 1, '2022-10-31 16:59:20', '2022-10-31 18:01:52', '2', 'Sick', 2, 'Actions should be taken', '', 20, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feeding_barang`
+--
+
+CREATE TABLE `feeding_barang` (
+  `id_feeding` int(11) NOT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+  `feeding_created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `feeding_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `id_barang` int(11) NOT NULL,
+  `admin_user` varchar(119) NOT NULL,
+  `id_feeds` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feeding_barang`
+--
+
+INSERT INTO `feeding_barang` (`id_feeding`, `jumlah`, `feeding_created`, `feeding_updated`, `id_barang`, `admin_user`, `id_feeds`) VALUES
+(1, 6, '2022-11-01 00:03:43', '2022-11-01 01:03:43', 21, 'admin', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feeds`
+--
+
+CREATE TABLE `feeds` (
+  `id_feeds` int(11) NOT NULL,
+  `nama_feeds` varchar(110) NOT NULL,
+  `jumlah` int(50) NOT NULL,
+  `feeds_created` datetime DEFAULT current_timestamp(),
+  `feeds_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `id_barang` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feeds`
+--
+
+INSERT INTO `feeds` (`id_feeds`, `nama_feeds`, `jumlah`, `feeds_created`, `feeds_updated`, `id_barang`) VALUES
+(2, 'Mesh', 15, '2022-10-31 22:57:13', '2022-11-01 01:03:43', 21),
+(3, 'Hay', 21, '2022-11-01 02:03:36', '2022-11-01 02:03:36', 21);
+
 -- --------------------------------------------------------
 
 --
@@ -123,6 +207,26 @@ INSERT INTO `identitas` (`identitas_id`, `identitas_website`, `identitas_deskrip
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `limitfeed`
+--
+
+CREATE TABLE `limitfeed` (
+  `limitfeed_id` int(11) NOT NULL,
+  `feeds` int(11) NOT NULL,
+  `limitfeed_created` datetime DEFAULT current_timestamp(),
+  `limitfeed_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `limitfeed`
+--
+
+INSERT INTO `limitfeed` (`limitfeed_id`, `feeds`, `limitfeed_created`, `limitfeed_updated`) VALUES
+(1, 10, '2022-11-01 01:41:01', '2022-11-01 01:41:01');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `limitstock`
 --
 
@@ -138,7 +242,7 @@ CREATE TABLE `limitstock` (
 --
 
 INSERT INTO `limitstock` (`limitstock_id`, `stock`, `limitstock_created`, `limitstock_updated`) VALUES
-(1, 50, '2019-02-14 23:33:38', '2022-06-13 11:33:29');
+(1, 50, '2019-02-14 23:33:38', '2022-11-01 02:06:35');
 
 -- --------------------------------------------------------
 
@@ -151,9 +255,19 @@ CREATE TABLE `master_barang` (
   `nama_barang` varchar(255) NOT NULL,
   `merek` varchar(255) NOT NULL,
   `stock` int(11) NOT NULL,
+  `temperature` int(255) NOT NULL,
+  `feeds` varchar(255) NOT NULL,
   `barang_created` datetime NOT NULL DEFAULT current_timestamp(),
   `barang_updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `master_barang`
+--
+
+INSERT INTO `master_barang` (`id_barang`, `nama_barang`, `merek`, `stock`, `temperature`, `feeds`, `barang_created`, `barang_updated`) VALUES
+(20, 'Layers', 'Bird', 47, 20, '', '2022-10-17 00:19:07', '2022-10-31 21:25:50'),
+(21, 'Cattle', 'Pen', 47, 29, '', '2022-10-17 00:19:34', '2022-10-31 21:26:28');
 
 -- --------------------------------------------------------
 
@@ -205,7 +319,8 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat_supplier`, `notelp_supplier`, `supplier_created`, `supplier_updated`) VALUES
-(1, 'Ishaq Umar', 'Adavi Eba, Kogi State', '090876556666', '2022-06-30 11:20:07', '2022-06-30 11:20:07');
+(1, 'Ishaq Umar', 'Adavi Eba, Kogi State', '090876556666', '2022-06-30 11:20:07', '2022-06-30 11:20:07'),
+(9, 'Audu Ali', 'Kebbi', '081367897645', '2022-10-17 00:15:43', '2022-10-17 00:15:43');
 
 -- --------------------------------------------------------
 
@@ -224,6 +339,18 @@ CREATE TABLE `transaksi_barang` (
   `id_supplier` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi_barang`
+--
+
+INSERT INTO `transaksi_barang` (`id_transaksi`, `jumlah`, `tanggal_transaksi`, `transaksi_updated`, `status_pergerakan`, `id_barang`, `admin_user`, `id_supplier`, `id_customer`) VALUES
+(47, 50, '2022-10-16 23:23:48', '2022-10-17 00:23:48', '1', 20, 'admin', 9, 0),
+(48, 78, '2022-10-16 23:24:34', '2022-10-17 00:24:34', '1', 21, 'admin', 9, 0),
+(49, 5, '2022-10-16 23:26:17', '2022-10-17 00:26:17', '2', 20, 'admin', 0, 11),
+(50, 2, '2022-10-29 20:54:38', '2022-10-29 21:54:38', '2', 21, 'admin', 0, 11),
+(51, 2, '2022-10-29 21:32:23', '2022-10-29 22:32:23', '2', 20, 'admin', 0, 11),
+(52, 10, '2022-10-31 20:25:50', '2022-10-31 21:25:50', '1', 20, 'admin', 9, 0);
 
 --
 -- Indexes for dumped tables
@@ -249,10 +376,34 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`);
 
 --
+-- Indexes for table `damaged_barang`
+--
+ALTER TABLE `damaged_barang`
+  ADD PRIMARY KEY (`id_damaged`);
+
+--
+-- Indexes for table `feeding_barang`
+--
+ALTER TABLE `feeding_barang`
+  ADD PRIMARY KEY (`id_feeding`);
+
+--
+-- Indexes for table `feeds`
+--
+ALTER TABLE `feeds`
+  ADD PRIMARY KEY (`id_feeds`);
+
+--
 -- Indexes for table `identitas`
 --
 ALTER TABLE `identitas`
   ADD PRIMARY KEY (`identitas_id`);
+
+--
+-- Indexes for table `limitfeed`
+--
+ALTER TABLE `limitfeed`
+  ADD PRIMARY KEY (`limitfeed_id`);
 
 --
 -- Indexes for table `limitstock`
@@ -300,13 +451,37 @@ ALTER TABLE `admin_level`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `damaged_barang`
+--
+ALTER TABLE `damaged_barang`
+  MODIFY `id_damaged` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `feeding_barang`
+--
+ALTER TABLE `feeding_barang`
+  MODIFY `id_feeding` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `feeds`
+--
+ALTER TABLE `feeds`
+  MODIFY `id_feeds` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `identitas`
 --
 ALTER TABLE `identitas`
   MODIFY `identitas_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `limitfeed`
+--
+ALTER TABLE `limitfeed`
+  MODIFY `limitfeed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `limitstock`
@@ -318,19 +493,19 @@ ALTER TABLE `limitstock`
 -- AUTO_INCREMENT for table `master_barang`
 --
 ALTER TABLE `master_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `transaksi_barang`
 --
 ALTER TABLE `transaksi_barang`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
